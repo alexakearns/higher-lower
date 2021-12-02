@@ -1,0 +1,22 @@
+{
+  "name": "higher-lower",
+  "version": "1.0.0",
+  "description": "",
+  "main": "higher-lower.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexakearns/higher-lower.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexakearns/higher-lower/issues"
+  },
+  "homepage": "https://github.com/alexakearns/higher-lower#readme",
+  "devDependencies": {
+    "eslint": "^8.3.0"
+  }
+}
