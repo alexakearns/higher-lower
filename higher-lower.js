@@ -72,7 +72,6 @@ const isHigherOrLower = () => {
     result.innerHTML = "You Lose";
     showReset();
   } 
-
   if (cards.length === gameLength) {
     showReset();
     result.innerHTML = "You Win";
@@ -88,7 +87,12 @@ const showReset = () => {
 const reset = () => {
   showReset()
   cards = [];
+  cardNumbers = [];
   higherLower = "";
+  result.innerHTML = "";
+  while (cardsContainer.firstChild) {
+    cardsContainer.removeChild(cardsContainer.firstChild);
+  }
   getPack();
 }
 
