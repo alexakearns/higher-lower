@@ -42,7 +42,7 @@ const callCard = () => {
   .then (res => res.json())
   .then((data) => {
     cards.push(data.cards[0]);
-    getCardValue(data.cards[0].value)
+    getCardValue(data.cards[0].value);
     createImage();
     if (higherLower !== "") {
       isHigherOrLower();
@@ -62,34 +62,35 @@ const createImage = () => {
 };
 
 const getCardValue = (value) => {
-  cardNumbers.push(cardValues[value])
-}
+  cardNumbers.push(cardValues[value]);
+};
 
 const isHigherOrLower = () => {
   let numCards = cards.length;
-  if (((higherLower === "higher") && (cardNumbers[numCards -1] >= cardNumbers[numCards -2])) 
-      || ((higherLower === "lower") && (cardNumbers[numCards -1] <= cardNumbers[numCards -2]))){
-  } else {
+  if (((higherLower === "higher") && (cardNumbers[numCards -1] < cardNumbers[numCards -2])) 
+      || ((higherLower === "lower") && (cardNumbers[numCards -1] > cardNumbers[numCards -2]))) {
     result.innerHTML = "You Lose";
-    showReset()
-  }
+    showReset();
+  } 
+
   if (cards.length === gameLength) {
-    showReset()
+    showReset();
     result.innerHTML = "You Win";
   }
-}
+};
 
 const showReset = () => {
-  higherBtn.classList.add("display-none");
-  lowerBtn.classList.add("display-none");
-  resetBtn.classList.remove("display-none")
-}
+  higherBtn.classList.toggle("display-none");
+  lowerBtn.classList.toggle("display-none");
+  resetBtn.classList.toggle("display-none");
+};
 
-// const reset = () => {
-//   cards = [];
-//   higherLower = "";
-//   getPack();
-// }
+const reset = () => {
+  showReset()
+  cards = [];
+  higherLower = "";
+  getPack();
+}
 
 const anotherCard = () => {
   higherBtn.addEventListener("click", function() {
