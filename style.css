@@ -51,6 +51,12 @@ header {
   color: #456990;
 }
 
+#higher:active {
+  background: #F9F4F5;
+  box-shadow: inset 0px 0px 5px #000;
+  color: #456990;
+}
+
 #lower {
   background: #71092C;
   border: #71092C solid 3px;
@@ -61,6 +67,12 @@ header {
   color: #71092C;
 }
 
+#lower:active {
+  background: #F9F4F5;
+  box-shadow: inset 0px 0px 5px #000;
+  color: #71092C;
+}
+
 #reset {
   background: #173753;
   border: #173753 solid 3px;
@@ -68,6 +80,12 @@ header {
 
 #reset:hover {
   background: #F9F4F5;
+  color: #173753;
+}
+
+#reset:active {
+  background: #F9F4F5;
+  box-shadow: inset 0px 0px 5px #000;
   color: #173753;
 }
 
