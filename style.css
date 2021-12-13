@@ -6,8 +6,11 @@ body {
 }
 
 header {
-  font-size: 30px;
   padding: 20px;
+}
+
+header h1 {
+  font-size: 4em;
 }
 
 .display-none {
@@ -91,4 +94,30 @@ header {
 
 #result {
   font-size: 30px;
+}
+
+@media only screen and (max-width: 600px) { 
+  header {
+    padding: 0;
+  }
+  
+  header h1 {
+    font-size: 40px;
+    margin: 25px 15px 15px;
+  }
+
+  .button-selection {
+    margin: 25px 15px 15px;
+  }
+
+  .button-container {
+    padding-bottom: 10px;
+  }
+
+  .cards img {
+    flex: 3 0 21%;
+    height: 130px;
+    /* width: 30%; */
+    padding: 7px;
+  }
 }
