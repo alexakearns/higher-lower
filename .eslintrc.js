@@ -8,7 +8,10 @@ module.exports = {
         "ecmaVersion": 13
     },
     "rules": {
-        "semi": ["error", "always"],
-        "quotes": ["error", "double"]
+        "arrow-spacing": 2,
+        "camelcase": [2, {"properties": "always"}],
+        "no-trailing-spaces": 2,
+        "quotes": ["error", "double"],
+        "semi": ["error", "always"]
     }
 };

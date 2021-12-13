@@ -27,7 +27,7 @@ const cardValues = {
 
 const getPack = () => {
   fetch (apiPack)
-  .then (res => res.json())
+  .then ((res) => res.json())
   .then((data) => {
     deck = data;
     callCard();
@@ -39,7 +39,7 @@ const getPack = () => {
 
 const callCard = () => {
   fetch(`https://deckofcardsapi.com/api/deck/${deck.deck_id}/draw/`)
-  .then (res => res.json())
+  .then ((res) => res.json())
   .then((data) => {
     cards.push(data.cards[0]);
     getCardValue(data.cards[0].value);
@@ -67,11 +67,11 @@ const getCardValue = (value) => {
 
 const isHigherOrLower = () => {
   let numCards = cards.length;
-  if (((higherLower === "higher") && (cardNumbers[numCards -1] < cardNumbers[numCards -2])) 
+  if (((higherLower === "higher") && (cardNumbers[numCards -1] < cardNumbers[numCards -2]))
       || ((higherLower === "lower") && (cardNumbers[numCards -1] > cardNumbers[numCards -2]))) {
     result.innerHTML = "You Lose";
     showReset();
-  } 
+  }
   if (cards.length === gameLength) {
     showReset();
     result.innerHTML = "You Win";
@@ -85,7 +85,7 @@ const showReset = () => {
 };
 
 const reset = () => {
-  showReset()
+  showReset();
   cards = [];
   cardNumbers = [];
   higherLower = "";
@@ -94,23 +94,20 @@ const reset = () => {
     cardsContainer.removeChild(cardsContainer.firstChild);
   }
   getPack();
-}
+};
 
 const anotherCard = () => {
   higherBtn.addEventListener("click", function() {
     higherLower = "higher";
     callCard();
   });
-  
   lowerBtn.addEventListener("click", function() {
     higherLower = "lower";
     callCard();
   });
-  
   resetBtn.addEventListener("click", function() {
     reset();
   });
-  
 };
 getPack();
 anotherCard();
