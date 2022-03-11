@@ -1,6 +1,6 @@
 # Higher Lower
 
-[Deployed](https://github.com/alexakearns/alexakearns.com)
+[Deployed](https://higher-lower-ak.surge.sh/)
 
 Card game using [https://deckofcardsapi.com](https://deckofcardsapi.com). 
 
